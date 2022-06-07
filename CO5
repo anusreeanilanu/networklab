@@ -1,0 +1,150 @@
+(base) mca37@mca37-HP-Pavilion-Desktop-590-p0xxx:~$ hostname
+mca37-HP-Pavilion-Desktop-590-p0xxx
+(base) mca37@mca37-HP-Pavilion-Desktop-590-p0xxx:~$ hostname -m
+hostname: invalid option -- 'm'
+Usage: hostname [-b] {hostname|-F file}         set host name (from file)
+       hostname [-a|-A|-d|-f|-i|-I|-s|-y]       display formatted name
+       hostname                                 display host name
+
+       {yp,nis,}domainname {nisdomain|-F file}  set NIS domain name (from file)
+       {yp,nis,}domainname                      display NIS domain name
+
+       dnsdomainname                            display dns domain name
+
+       hostname -V|--version|-h|--help          print info and exit
+
+Program name:
+       {yp,nis,}domainname=hostname -y
+       dnsdomainname=hostname -d
+
+Program options:
+    -a, --alias            alias names
+    -A, --all-fqdns        all long host names (FQDNs)
+    -b, --boot             set default hostname if none available
+    -d, --domain           DNS domain name
+    -f, --fqdn, --long     long host name (FQDN)
+    -F, --file             read host name or NIS domain name from given file
+    -i, --ip-address       addresses for the host name
+    -I, --all-ip-addresses all addresses for the host
+    -s, --short            short host name
+    -y, --yp, --nis        NIS/YP domain name
+
+Description:
+   This command can get or set the host name or the NIS domain name. You can
+   also get the DNS domain or the FQDN (fully qualified domain name).
+   Unless you are using bind or NIS for host lookups you can change the
+   FQDN (Fully Qualified Domain Name) and the DNS domain name (which is
+   part of the FQDN) in the /etc/hosts file.
+(base) mca37@mca37-HP-Pavilion-Desktop-590-p0xxx:~$ hostname -i
+127.0.1.1
+(base) mca37@mca37-HP-Pavilion-Desktop-590-p0xxx:~$ nslookup google.com
+Server:		127.0.1.1
+Address:	127.0.1.1#53
+
+Non-authoritative answer:
+Name:	google.com
+Address: 172.217.160.142
+
+(base) mca37@mca37-HP-Pavilion-Desktop-590-p0xxx:~$ ping google.com
+PING google.com (142.250.182.46) 56(84) bytes of data.
+64 bytes from maa05s19-in-f14.1e100.net (142.250.182.46): icmp_seq=97 ttl=59 time=14.8 ms
+64 bytes from maa05s19-in-f14.1e100.net (142.250.182.46): icmp_seq=98 ttl=59 time=14.7 ms
+64 bytes from maa05s19-in-f14.1e100.net (142.250.182.46): icmp_seq=99 ttl=59 time=14.7 ms
+64 bytes from maa05s19-in-f14.1e100.net (142.250.182.46): icmp_seq=100 ttl=59 time=14.7 ms
+64 bytes from maa05s19-in-f14.1e100.net (142.250.182.46): icmp_seq=101 ttl=59 time=14.7 ms
+64 bytes from maa05s19-in-f14.1e100.net (142.250.182.46): icmp_seq=102 ttl=59 time=15.0 ms
+64 bytes from maa05s19-in-f14.1e100.net (142.250.182.46): icmp_seq=103 ttl=59 time=14.8 ms
+64 bytes from maa05s19-in-f14.1e100.net (142.250.182.46): icmp_seq=104 ttl=59 time=14.8 ms
+64 bytes from maa05s19-in-f14.1e100.net (142.250.182.46): icmp_seq=105 ttl=59 time=14.7 ms
+64 bytes from maa05s19-in-f14.1e100.net (142.250.182.46): icmp_seq=106 ttl=59 time=14.8 ms
+64 bytes from maa05s19-in-f14.1e100.net (142.250.182.46): icmp_seq=107 ttl=59 time=14.7 ms
+64 bytes from maa05s19-in-f14.1e100.net (142.250.182.46): icmp_seq=108 ttl=59 time=19.4 ms
+64 bytes from maa05s19-in-f14.1e100.net (142.250.182.46): icmp_seq=109 ttl=59 time=14.7 ms
+64 bytes from maa05s19-in-f14.1e100.net (142.250.182.46): icmp_seq=110 ttl=59 time=14.7 ms
+64 bytes from maa05s19-in-f14.1e100.net (142.250.182.46): icmp_seq=111 ttl=59 time=14.7 ms
+64 bytes from maa05s19-in-f14.1e100.net (142.250.182.46): icmp_seq=112 ttl=59 time=14.7 ms
+64 bytes from maa05s19-in-f14.1e100.net (142.250.182.46): icmp_seq=113 ttl=59 time=14.8 ms
+^Z
+[1]+  Stopped                 ping google.com
+(base) mca37@mca37-HP-Pavilion-Desktop-590-p0xxx:~$ ping google.com
+PING google.com (142.250.195.14) 56(84) bytes of data.
+64 bytes from del12s09-in-f14.1e100.net (142.250.195.14): icmp_seq=1 ttl=59 time=58.5 ms
+64 bytes from del12s09-in-f14.1e100.net (142.250.195.14): icmp_seq=2 ttl=59 time=49.5 ms
+64 bytes from del12s09-in-f14.1e100.net (142.250.195.14): icmp_seq=3 ttl=59 time=51.3 ms
+64 bytes from del12s09-in-f14.1e100.net (142.250.195.14): icmp_seq=4 ttl=59 time=49.3 ms
+64 bytes from del12s09-in-f14.1e100.net (142.250.195.14): icmp_seq=5 ttl=59 time=57.8 ms
+64 bytes from del12s09-in-f14.1e100.net (142.250.195.14): icmp_seq=6 ttl=59 time=57.8 ms
+64 bytes from del12s09-in-f14.1e100.net (142.250.195.14): icmp_seq=7 ttl=59 time=55.7 ms
+64 bytes from del12s09-in-f14.1e100.net (142.250.195.14): icmp_seq=8 ttl=59 time=49.5 ms
+64 bytes from del12s09-in-f14.1e100.net (142.250.195.14): icmp_seq=9 ttl=59 time=49.3 ms
+64 bytes from del12s09-in-f14.1e100.net (142.250.195.14): icmp_seq=10 ttl=59 time=49.3 ms
+64 bytes from del12s09-in-f14.1e100.net (142.250.195.14): icmp_seq=11 ttl=59 time=49.3 ms
+64 bytes from del12s09-in-f14.1e100.net (142.250.195.14): icmp_seq=12 ttl=59 time=51.1 ms
+64 bytes from del12s09-in-f14.1e100.net (142.250.195.14): icmp_seq=13 ttl=59 time=49.4 ms
+^C
+--- google.com ping statistics ---
+13 packets transmitted, 13 received, 0% packet loss, time 12019ms
+rtt min/avg/max/mdev = 49.316/52.180/58.502/3.655 ms
+(base) mca37@mca37-HP-Pavilion-Desktop-590-p0xxx:~$ ifconfig -a
+enp2s0    Link encap:Ethernet  HWaddr f4:39:09:2e:67:3f  
+          inet addr:172.20.31.252  Bcast:172.20.255.255  Mask:255.255.0.0
+          inet6 addr: fe80::225:c7e8:90ec:7f41/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:326533 errors:0 dropped:1 overruns:0 frame:0
+          TX packets:231361 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:379953329 (379.9 MB)  TX bytes:19906448 (19.9 MB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:715 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:715 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:70121 (70.1 KB)  TX bytes:70121 (70.1 KB)
+
+(base) mca37@mca37-HP-Pavilion-Desktop-590-p0xxx:~$ sudo ifconfig lo down
+[sudo] password for mca37: 
+(base) mca37@mca37-HP-Pavilion-Desktop-590-p0xxx:~$ sudo ifconfig lo up
+(base) mca37@mca37-HP-Pavilion-Desktop-590-p0xxx:~$ sudo ifconfig lo down
+(base) mca37@mca37-HP-Pavilion-Desktop-590-p0xxx:~$ ifconfig -a
+enp2s0    Link encap:Ethernet  HWaddr f4:39:09:2e:67:3f  
+          inet addr:172.20.31.252  Bcast:172.20.255.255  Mask:255.255.0.0
+          inet6 addr: fe80::225:c7e8:90ec:7f41/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:343325 errors:0 dropped:1 overruns:0 frame:0
+          TX packets:238470 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:390560319 (390.5 MB)  TX bytes:20540723 (20.5 MB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          LOOPBACK  MTU:65536  Metric:1
+          RX packets:843 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:843 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:83845 (83.8 KB)  TX bytes:83845 (83.8 KB)
+
+(base) mca37@mca37-HP-Pavilion-Desktop-590-p0xxx:~$ sudo ifconfig lo down
+(base) mca37@mca37-HP-Pavilion-Desktop-590-p0xxx:~$ sudo ifconfig lo up
+(base) mca37@mca37-HP-Pavilion-Desktop-590-p0xxx:~$ ifconfig -a
+enp2s0    Link encap:Ethernet  HWaddr f4:39:09:2e:67:3f  
+          inet addr:172.20.31.252  Bcast:172.20.255.255  Mask:255.255.0.0
+          inet6 addr: fe80::225:c7e8:90ec:7f41/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:344886 errors:0 dropped:1 overruns:0 frame:0
+          TX packets:238549 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:390747274 (390.7 MB)  TX bytes:20549490 (20.5 MB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:891 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:891 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:88778 (88.7 KB)  TX bytes:88778 (88.7 KB)
+
+(base) mca37@mca37-HP-Pavilion-Desktop-590-p0xxx:~$ 
